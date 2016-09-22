@@ -192,6 +192,7 @@ target is the given article.
 import sqlalchemy as sa
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy_utils import JSONType, generic_relationship
+from sqlalchemy.dialects.postgresql import UUID
 
 from .base import Plugin
 from ..factory import ModelFactory
@@ -237,7 +238,7 @@ class ActivityFactory(ModelFactory):
 
             object_type = sa.Column(sa.String(255))
 
-            object_id = sa.Column(sa.BigInteger)
+            object_id = sa.Column(UUID)
 
             object_tx_id = sa.Column(sa.BigInteger)
 
