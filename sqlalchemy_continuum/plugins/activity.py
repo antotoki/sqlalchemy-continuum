@@ -259,7 +259,7 @@ class ActivityFactory(ModelFactory):
                     return session.query(
                         sa.func.max(version_cls.transaction_id)
                     ).filter(
-                        version_cls.id == obj.Id
+                        version_cls.Id == obj.Id
                     ).scalar()
 
             def calculate_object_tx_id(self):
