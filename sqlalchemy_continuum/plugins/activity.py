@@ -201,7 +201,7 @@ from ..utils import version_class, version_obj
 
 class ActivityBase(object):
     id = sa.Column(
-        UUID,
+        sa.BigInteger,
         sa.schema.Sequence('activity_id_seq'),
         primary_key=True,
     )
@@ -228,7 +228,7 @@ class ActivityFactory(ModelFactory):
             manager = self
 
             transaction_id = sa.Column(
-                UUID,
+                 sa.BigInteger,
                 index=True,
                 nullable=False
             )
